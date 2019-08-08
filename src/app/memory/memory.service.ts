@@ -36,8 +36,10 @@ export class MemoryService {
     if (this.gameRun || this.intervalError) {
       return;
     }
+
     this.gameRun = true;
     this.rand = this.checkRandom(this.random(0, 99));
+    this.selectedSquares.push(this.rand);
 
     this.interval = setInterval(() => {
       if (this.squares[this.rand].color === 'yellow') {
@@ -45,6 +47,7 @@ export class MemoryService {
         this.playerPCcount += 1;
       }
       this.rand = this.checkRandom(this.random(0, 99));
+      this.selectedSquares.push(this.rand);
       this.squares[this.rand].color = 'yellow';
 
       if (this.playerPCcount === winnerNum || this.playerUsercount === winnerNum) {
@@ -59,12 +62,13 @@ export class MemoryService {
   }
 
   checkRandom(num) {
-    return (this.selectedSquares.some(el => el === num)) ? this.checkRandom(this.random(0, 100)) : num;
+     return (this.selectedSquares.some(el => el === num)) ? this.checkRandom(this.random(0, 99)) : num;
   }
 
   finishGame() {
     this.gameFinish = true;
     this.gameRun = false;
+    this.selectedSquares = [];
     clearInterval(this.interval);
   }
 }
