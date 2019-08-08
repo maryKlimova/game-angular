@@ -1,9 +1,5 @@
-import {Injectable} from '@angular/core';
 import {SquareService} from '../square/square.service';
 
-@Injectable({
-  providedIn: 'root'
-})
 
 const winnerNum = 10;
 
