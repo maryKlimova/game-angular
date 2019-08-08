@@ -1,0 +1,16 @@
+<div class="notification-overlay">
+  <div class="notification">
+    <div *ngIf="memory.playerPCcount > memory.playerUsercount">
+      <h2 id="result-winner">Game Over</h2>
+      <h3>Computer is a winner</h3>
+      <p>Computer: {{memory.playerPCcount}} vs User: {{ memory.playerUsercount}}</p>
+    </div>
+    <div *ngIf="memory.playerPCcount < memory.playerUsercount" class="winner-notf">
+      <h3>Congratulations!</h3>
+      <h5>You are a winner!</h5>
+      <p>Computer: {{memory.playerPCcount}} vs User: {{ memory.playerUsercount}}</p>
+    </div>
+
+    <button class="button restart-game" (click)="memory.setField()">Restart</button>
+  </div>
+</div>

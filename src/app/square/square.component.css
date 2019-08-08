@@ -1,0 +1,25 @@
+.blue {
+  background-color: #3A88FD;
+}
+
+.yellow {
+  background-color: #FFCE00;
+}
+
+.red {
+  background-color: #FF0800;
+}
+
+.green {
+  background-color: #3D8656;
+}
+
+.squareItem {
+  width: calc(6vmin - 1px);
+  height: calc(6vmin - 1px);
+  display: block;
+  border-left: 1px  inset #fff;
+  border-bottom: 1px solid #fff;
+  box-shadow: 0 0 2px inset grey;
+
+}

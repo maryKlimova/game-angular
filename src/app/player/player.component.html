@@ -1,0 +1,12 @@
+<div class="player" *ngIf="player">
+  <p class="player-title">Player User</p>
+  <p class="player-score" [style.color]="'#3D8656'" >
+    {{memory.playerUsercount}}
+  </p>
+</div>
+<div class="player" *ngIf="!player">
+  <p class="player-title">Player  PC</p>
+  <p class="player-score" [style.color]="'#B84A3B'" >
+    {{memory.playerPCcount}}
+  </p>
+</div>
