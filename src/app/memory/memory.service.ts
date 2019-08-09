@@ -14,6 +14,7 @@ export class MemoryService {
   squares = [];
   intervalTime: number;
   intervalError = false;
+  randIndex = 0;
 
   constructor(private squareService: SquareService) {
     this.setField();
@@ -37,17 +38,17 @@ export class MemoryService {
       return;
     }
 
+    this.setRandomNums();
+
     this.gameRun = true;
-    this.rand = this.checkRandom(this.random(0, 99));
-    this.selectedSquares.push(this.rand);
+    this.rand = this.selectedSquares[this.randIndex];
 
     this.interval = setInterval(() => {
       if (this.squares[this.rand].color === 'yellow') {
         this.squares[this.rand].color = 'red';
         this.playerPCcount += 1;
       }
-      this.rand = this.checkRandom(this.random(0, 99));
-      this.selectedSquares.push(this.rand);
+      this.rand = this.selectedSquares[this.randIndex += 1];
       this.squares[this.rand].color = 'yellow';
 
       if (this.playerPCcount === winnerNum || this.playerUsercount === winnerNum) {
@@ -56,13 +57,16 @@ export class MemoryService {
     }, this.intervalTime);
   }
 
+  setRandomNums() {
+    const nums = this.squareService.createArray();
+      let i = nums.length,
+       j = 0;
 
-  random(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
-
-  checkRandom(num) {
-     return (this.selectedSquares.some(el => el === num)) ? this.checkRandom(this.random(0, 99)) : num;
+    while (i--) {
+      j = Math.floor(Math.random() * (i + 1));
+      this.selectedSquares.push(nums[j]);
+      nums.splice(j, 1);
+    }
   }
 
   finishGame() {

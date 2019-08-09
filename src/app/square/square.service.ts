@@ -1,11 +1,7 @@
-import {Injectable} from '@angular/core';
 import {Square} from './square';
 
-@Injectable({
-  providedIn: 'root'
-})
 export class SquareService {
-  squaresAmount = (new Array(100)).fill(1).map((a, i) => i);
+  squaresAmount;
 
   squareClasses = {
     blue: true,
@@ -15,6 +11,11 @@ export class SquareService {
   };
 
   constructor() {
+    this.squaresAmount = this.createArray();
+  }
+
+  createArray() {
+    return (new Array(100)).fill(1).map((a, i) => i)
   }
 
   setSquares() {
