@@ -15,7 +15,7 @@ export class SquareService {
   }
 
   createArray() {
-    return (new Array(100)).fill(1).map((a, i) => i)
+    return (new Array(100)).fill(1).map((a, i) => i);
   }
 
   setSquares() {

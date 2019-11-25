@@ -1,25 +1,39 @@
 .blue {
-  background-color: #3A88FD;
+  /*background-color: #3A88FD;*/
+  background: radial-gradient(ellipse at center, rgba(176,208,237,1) 0%, rgba(176,208,237,1) 2%, rgba(37,124,247,1) 100%);
 }
 
 .yellow {
-  background-color: #FFCE00;
+  /*background-color: #FFCE00;*/
+  background: radial-gradient(ellipse at center, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
 }
 
 .red {
-  background-color: #FF0800;
+  /*background-color: #FF0800;*/
+  background: radial-gradient(ellipse at center, rgba(245,168,159,1) 0%, rgba(245,168,159,1) 6%, rgba(246,96,76,1) 41%, rgba(246,41,12,1) 68%, rgba(231,56,39,1) 100%);
 }
 
 .green {
-  background-color: #3D8656;
+  /*background-color: #3D8656;*/
+  background: radial-gradient(ellipse at center, rgba(175,250,183,1) 0%, rgba(8,194,8,1) 100%);
+
 }
 
 .squareItem {
-  width: calc(6vmin - 1px);
-  height: calc(6vmin - 1px);
+  width: calc(6vmin - 2px);
+  height: calc(6vmin - 2px);
   display: block;
-  border-left: 1px  inset #fff;
-  border-bottom: 1px solid #fff;
-  box-shadow: 0 0 2px inset grey;
+  /*box-shadow: 0 0 2px inset grey;*/
+  border-radius: 4px;
+  border: 1px solid #fff;
+  border-collapse: collapse;
+  animation: appear 1s ease-in-out;
+}
+.squareItem:hover{
+  box-shadow: 0 0 2px black;
+}
 
+@keyframes appear {
+  0%{transform: scale(0); opacity: 0 }
+  100%{transform: scale(1); opacity: 100%}
 }

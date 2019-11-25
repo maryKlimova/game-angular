@@ -1,12 +1,13 @@
 <div class="player" *ngIf="player">
   <p class="player-title">Player User</p>
-  <p class="player-score" [style.color]="'#3D8656'" >
+  <p class="player-score" [style.color]="'#3D8656'" [@rotateNum]="userState" (@rotateNum.done)="onDone($event)">
     {{memory.playerUsercount}}
   </p>
 </div>
 <div class="player" *ngIf="!player">
   <p class="player-title">Player  PC</p>
-  <p class="player-score" [style.color]="'#B84A3B'" >
+  <p class="player-score" [style.color]="'#B84A3B'" [@rotateNum]="state" (@rotateNum.done)="onDone($event)">
     {{memory.playerPCcount}}
   </p>
 </div>
+

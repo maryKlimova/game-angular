@@ -6,15 +6,17 @@
   padding: 20px;
   box-shadow: 0 0 10px #3C3F41;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: #00B3E6;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  margin: 5% auto;
+  animation: drop_appear 0.5s ease-in-out;
+  animation-fill-mode: forwards;
   text-align: center;
   z-index: 2;
+  color: #fff;
 }
 
 .notification-overlay{
@@ -31,4 +33,27 @@
   -webkit-touch-callout: none;
 
 }
+#result-winner{
+  animation: example 1s infinite;
+}
 
+
+@keyframes drop_appear {
+  0%{margin: 0% auto;opacity: 0;}
+  100%{margin: 5% auto;opacity: 1;}
+}
+
+@keyframes flash {
+  0%{}
+  100%{}
+}
+
+@keyframes example {
+  0%{color:lime; text-shadow:0 0 20px green}
+  25%{color:green; text-shadow:2px 2px 2px lime; transform: translate(-2px,1px)}
+  40%{color:lime; text-shadow:none; transform: translate(0,0)}
+  50%{color:green; text-shadow:5px 5px 2px blue, -5px -5px 2px red; transform: translate(0px,5px)}
+  70%{color:lime; text-shadow:none; transform: translate(0,0)}
+  80%{color:lime; text-shadow:0 0 20px green; transform: translate(-2px,1px)}
+  100%{color:lime; text-shadow:none;}
+}

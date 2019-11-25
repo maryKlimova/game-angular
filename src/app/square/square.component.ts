@@ -21,5 +21,6 @@ export class SquareComponent implements OnInit {
     }
     this.memory.squares[this.square.id].color = 'green';
     this.memory.playerUsercount += 1;
+    this.memory.clearSruares(this.memory.intervalTime, this.memory.squares, this.memory.selectedSquares, this.memory.randIndex);
   }
 }
