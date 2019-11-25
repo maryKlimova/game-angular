@@ -1,0 +1,18 @@
+<app-notification *ngIf="memory.gameFinish"></app-notification>
+
+<div class="game-wrap" (keyup.enter)="memory.newGame()">
+  <app-player [player]="false" [scorePC]="memory.playerPCcount"></app-player>
+  <div class="game-field-wrap">
+    <div class="game-field">
+      <app-square *ngFor="let square of memory.squares" [square]="square">
+      </app-square>
+    </div>
+    <div class="timer-input">
+      <h3>Enter time in ms</h3>
+      <span class="interval-error" *ngIf="memory.intervalError">Please enter valid time.</span>
+      <input  type="number" placeholder="1000" [(ngModel)]="memory.intervalTime" pattern="[0-9]{10}">
+    </div>
+    <button class="game-start-btn button" (click)="memory.newGame()">Start</button>
+  </div>
+  <app-player [player]="true" [scoreUser]="memory.playerUsercount"></app-player>
+</div>

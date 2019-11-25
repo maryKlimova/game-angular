@@ -1,0 +1,79 @@
+
+.game-wrap{
+  width: 80%;
+  display: flex;
+  padding: 30px;
+  justify-content: space-between;
+  margin: auto;
+}
+
+
+.game-field{
+  width: 60vmin ;
+  height:60vmin;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3px auto;
+}
+
+.game-field-wrap{
+  text-align: center;
+}
+
+.button{
+  margin-top: 30px;
+  padding: 10px 20px;
+  background:#3A88FD ;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+
+.game-start-btn:hover {
+  box-shadow: 0 0 6px #1B4077;
+}
+
+
+.results-bts-wrap{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+#result-winner{
+  font-size: 24px;
+  color: #2B2B2B;
+  text-transform: uppercase;
+}
+
+.timer-input{
+  position: relative;
+  padding: 20px;
+  z-index: 0;
+}
+.timer-input input{
+  width: 200px;
+  font-size: 21px;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+  padding-left: 10px;
+  outline: none;
+}
+.interval-error{
+  color: red;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 0;
+}
